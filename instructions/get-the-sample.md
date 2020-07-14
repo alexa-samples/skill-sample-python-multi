@@ -1,13 +1,13 @@
 # 2. Get the Sample
 
-Download the sample code or use git to clone the sample from the Alexa GitHub repository. You will then use the *skill-sample-nodejs-multi* folder as a working directory for the sample.
+Download the sample code or use git to clone the sample from the Alexa GitHub repository. You will then use the *skill-sample-python-multi* folder as a working directory for the sample.
 
 ## Download the Sample Code from GitHub
 
 Download the zipped sample code.
 
-1. Download the sample from [https://github.com/alexa/skill-sample-nodejs-multi/archive/master.zip](https://github.com/alexa/skill-sample-nodejs-multi/archive/master.zip).
-2. Unzip the contents of `skill-sample-nodejs-multi-master.zip`.
+1. Download the sample from [https://github.com/alexa/skill-sample-python-multi/archive/master.zip](https://github.com/alexa/skill-sample-python-multi/archive/master.zip).
+2. Unzip the contents of `skill-sample-python-multi-master.zip`.
 
 ## (Or) Clone the Sample using Git
 
@@ -15,18 +15,18 @@ If you have git installed, you can use git to clone the sample instead of downlo
 
 1. Run the following command to clone the sample:
 ```
-git clone https://github.com/alexa/skill-sample-nodejs-multi
+git clone https://github.com/alexa/skill-sample-python-multi
 ```
 or
 ```
-git clone git@github.com:alexa/skill-sample-nodejs-multi.git
+git clone git@github.com:alexa/skill-sample-python-multi.git
 ```
-2. Once the clone is complete, you should have a folder named *skill-sample-nodejs-multi* on your working directory.
+2. Once the clone is complete, you should have a folder named *skill-sample-python-multi* on your working directory.
 
 > If you want to use Git, visit [https://git-scm.com/downloads](https://git-scm.com/downloads) to download and install a version for your platform.
 
 ## Checkpoint
-- You should have a folder on your working directory like *skill-sample-nodejs-multi-master* that contains the sample code with the `README.md` file at the root.
+- You should have a folder on your working directory like *skill-sample-python-multi-master* that contains the sample code with the `README.md` file at the root.
 
 The sample code project structure looks like the following:
 

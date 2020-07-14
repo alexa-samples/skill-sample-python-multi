@@ -1,0 +1,3 @@
+ask-sdk
+ask-sdk-core
+boto3

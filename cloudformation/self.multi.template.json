@@ -7,96 +7,8 @@
       "Description": "The Alexa Skill ID."
     }
   },
-  "Metadata": {
-    "AWS::CloudFormation::Designer": {
-      "b6b1f0bd-621e-4c3b-b0dd-ad660c51f159": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": 330,
-          "y": 240
-        },
-        "z": 1,
-        "embeds": [],
-        "dependson": [
-          "86ea874c-f935-4b31-b25b-6920141d8928"
-        ]
-      },
-      "143ca3f1-ae3c-47c6-902a-0031cc6a7d4f": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": 540,
-          "y": 240
-        },
-        "z": 1,
-        "embeds": [],
-        "dependson": [
-          "86ea874c-f935-4b31-b25b-6920141d8928"
-        ]
-      },
-      "1de931b4-0b57-48dd-9a6f-5525e33fa753": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": 60,
-          "y": 90
-        },
-        "z": 1,
-        "embeds": []
-      },
-      "d14c61fa-290a-47c6-adf1-24eff373f620": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": 180,
-          "y": 90
-        },
-        "z": 1,
-        "embeds": [],
-        "isassociatedwith": [
-          "143ca3f1-ae3c-47c6-902a-0031cc6a7d4f"
-        ]
-      },
-      "38ad2904-aa96-47a3-ad36-2f7f73a6939a": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": 300,
-          "y": 90
-        },
-        "z": 1,
-        "embeds": [],
-        "isassociatedwith": [
-          "143ca3f1-ae3c-47c6-902a-0031cc6a7d4f"
-        ]
-      },
-      "9ce353c6-5774-49ff-a395-3f691924595d": {
-        "size": {
-          "width": 60,
-          "height": 60
-        },
-        "position": {
-          "x": 60,
-          "y": 230
-        },
-        "z": 0,
-        "embeds": []
-      }
-    }
-  },
   "Resources": {
-    "BeeperFunctionExecutionRole": {
+    "PagerFunctionExecutionRole": {
       "Type": "AWS::IAM::Role",
       "Properties": {
         "AssumeRolePolicyDocument": {
@@ -117,7 +29,7 @@
         },
         "Policies": [
           {
-            "PolicyName": "skill-sample-nodejs-multi",
+            "PolicyName": "skill-sample-python-multi",
             "PolicyDocument": {
               "Version": "2012-10-17",
               "Statement": [
@@ -135,40 +47,47 @@
             }
           }
         ],
-        "RoleName": "lambda_skill_sample_nodejs_multi"
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "b6b1f0bd-621e-4c3b-b0dd-ad660c51f159"
-        }
+        "RoleName": "lambda_skill_sample_python_multi"
       },
       "DependsOn": []
     },
-    "BeeperFunction": {
+    "PagerFunctionLayer": {
+      "Type" : "AWS::Lambda::LayerVersion",
+      "Properties" : {
+          "CompatibleRuntimes": ["python3.6","python3.7","python3.8"],
+          "Content": {
+            "S3Bucket": "jeffnunn",
+            "S3Key": "skill-sample-python-ask-layer.zip"
+          },
+          "Description": "Layer containing ASK SDK and ASK SDK Core",
+          "LayerName": "ASK"
+        }
+    },
+    "PagerFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
         "Code": {
-          "S3Bucket": "us-skill-packages",
-          "S3Key": "skill-sample-nodejs-multi.zip"
+          "S3Bucket": "jeffnunn",
+          "S3Key": "skill-sample-python-multi.zip"
         },
-        "FunctionName": "skill-sample-nodejs-multi",
-        "Handler": "index.handler",
+        "FunctionName": "skill-sample-python-multi",
+        "Handler": "lambda_function.handler",
+        "Layers": [
+          {
+            "Ref": "PagerFunctionLayer"
+          }
+        ],
         "Role": {
           "Fn::GetAtt": [
-            "BeeperFunctionExecutionRole",
+            "PagerFunctionExecutionRole",
             "Arn"
           ]
         },
-        "Runtime": "nodejs10.x"
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "143ca3f1-ae3c-47c6-902a-0031cc6a7d4f"
-        }
+        "Runtime": "python3.8"
       },
       "DependsOn": []
     },
-    "BeeperFunctionPermissionSH": {
+    "PagerFunctionPermissionSH": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
         "Action": "lambda:InvokeFunction",
@@ -177,19 +96,14 @@
         },
         "FunctionName": {
           "Fn::GetAtt": [
-            "BeeperFunction",
+            "PagerFunction",
             "Arn"
           ]
         },
         "Principal": "alexa-connectedhome.amazon.com"
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "38ad2904-aa96-47a3-ad36-2f7f73a6939a"
-        }
       }
     },
-    "BeeperFunctionPermissionASK": {
+    "PagerFunctionPermissionASK": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
         "Action": "lambda:InvokeFunction",
@@ -198,57 +112,47 @@
         },
         "FunctionName": {
           "Fn::GetAtt": [
-            "BeeperFunction",
+            "PagerFunction",
             "Arn"
           ]
         },
         "Principal": "alexa-appkit.amazon.com"
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "d14c61fa-290a-47c6-adf1-24eff373f620"
-        }
       }
     },
-    "BeeperEventQueue": {
+    "PagerEventQueue": {
       "Type": "AWS::SQS::Queue",
       "Properties": {
-        "QueueName": "BeeperEventQueue"
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "9ce353c6-5774-49ff-a395-3f691924595d"
-        }
+        "QueueName": "PagerEventQueue"
       }
     }
   },
   "Outputs": {
-    "BeeperFunctionLambdaArn": {
-      "Description": "The Alexa Skill Lambda ARN of the Beeper function.",
+    "PagerFunctionLambdaArn": {
+      "Description": "The Alexa Skill Lambda ARN of the Pager function.",
       "Value": {
         "Fn::GetAtt": [
-          "BeeperFunction",
+          "PagerFunction",
           "Arn"
         ]
       },
       "Export": {
-        "Name": "beeper-function-lambda-arn"
+        "Name": "pager-function-lambda-arn"
       }
     },
     "CodeUrl": {
       "Description": "The URL for the Code",
-      "Value": "https://us-skill-packages.s3.amazonaws.com/skill-sample-nodejs-multi-workshop.zip",
+      "Value": "https://jeffnunn-public.s3.amazonaws.com/skill-sample-python-multi.zip",
       "Export": {
-        "Name": "beeper-function-code-url"
+        "Name": "pager-function-code-url"
       }
     },
-    "BeeperSqsQueueUrl": {
+    "PagerSqsQueueUrl": {
       "Description": "The URL for the SQS Queue",
       "Value": {
-        "Ref": "BeeperEventQueue"
+        "Ref": "PagerEventQueue"
       },
       "Export": {
-        "Name": "beeper-event-queue-url"
+        "Name": "pager-event-queue-url"
       }
     }
   }

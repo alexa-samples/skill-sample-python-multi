@@ -5,52 +5,52 @@
         "en-US": {
           "summary": "A skill that beeps.",
           "examplePhrases": [
-            "Alexa open beeper",
-            "Alexa tell beeper to beep",
-            "Alexa ask beeper to beep once"
+            "Alexa open pager",
+            "Alexa tell pager to beep",
+            "Alexa ask pager to beep once"
           ],
-          "name": "Beeper",
-          "description": "An Alexa sample application that intructs your computer to beep."
+          "name": "Pager",
+          "description": "An Alexa sample application that instructs your computer to beep."
         },
         "en-GB": {
           "summary": "A skill that beeps.",
           "examplePhrases": [
-            "Alexa open beeper",
-            "Alexa tell beeper to beep",
-            "Alexa ask beeper to beep once"
+            "Alexa open pager",
+            "Alexa tell pager to beep",
+            "Alexa ask pager to beep once"
           ],
-          "name": "Beeper",
-          "description": "An Alexa sample application that intructs your computer to beep."
+          "name": "Pager",
+          "description": "An Alexa sample application that instructs your computer to beep."
         },
         "en-CA": {
           "summary": "A skill that beeps.",
           "examplePhrases": [
-            "Alexa open beeper",
-            "Alexa tell beeper to beep",
-            "Alexa ask beeper to beep once"
+            "Alexa open pager",
+            "Alexa tell pager to beep",
+            "Alexa ask pager to beep once"
           ],
-          "name": "Beeper",
-          "description": "An Alexa sample application that intructs your computer to beep."
+          "name": "Pager",
+          "description": "An Alexa sample application that instructs your computer to beep."
         },
         "en-IN": {
           "summary": "A skill that beeps.",
           "examplePhrases": [
-            "Alexa open beeper",
-            "Alexa tell beeper to beep",
-            "Alexa ask beeper to beep once"
+            "Alexa open pager",
+            "Alexa tell pager to beep",
+            "Alexa ask pager to beep once"
           ],
-          "name": "Beeper",
-          "description": "An Alexa sample application that intructs your computer to beep."
+          "name": "Pager",
+          "description": "An Alexa sample application that instructs your computer to beep."
         },
         "en-AU": {
           "summary": "A skill that beeps.",
           "examplePhrases": [
-            "Alexa open beeper",
-            "Alexa tell beeper to beep",
-            "Alexa ask beeper to beep once"
+            "Alexa open pager",
+            "Alexa tell pager to beep",
+            "Alexa ask pager to beep once"
           ],
-          "name": "Beeper",
-          "description": "An Alexa sample application that intructs your computer to beep."
+          "name": "Pager",
+          "description": "An Alexa sample application that instructs your computer to beep."
         },
         "es-ES": {
           "summary": "Una skill que pita.",

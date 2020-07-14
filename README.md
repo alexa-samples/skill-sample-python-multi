@@ -1,8 +1,8 @@
-# Build a Multi Capability Alexa Skill (Node.js)
+# Build a Multi Capability Alexa Skill (Python)
 
 This is an Alexa skill sample that shows how to handle custom and smart home requests in a single skill that supports both models. It shows the discovery and request/response handling of a skill implementing Alexa custom and smart home capabilities.
 
-At the end of this sample, you will have an Alexa skill and a supporting AWS backend that responds to commands for both custom and smart home interaction models. You will implement a "Beeper" skill and a virtual "Beeper" device that allows you to send commands to your computer that instructs your computer to beep.
+At the end of this sample, you will have an Alexa skill and a supporting AWS backend that responds to commands for both custom and smart home interaction models. You will implement a "Pager" skill and a virtual "Pager" device that allows you to send commands to your computer that instructs your computer to beep.
 
 To start this sample, follow the [instructions](./instructions/README.md).
 
