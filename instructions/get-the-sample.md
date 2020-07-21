@@ -6,7 +6,7 @@ Download the sample code or use git to clone the sample from the Alexa GitHub re
 
 Download the zipped sample code.
 
-1. Download the sample from [https://github.com/alexa/skill-sample-python-multi/archive/master.zip](https://github.com/alexa/skill-sample-python-multi/archive/master.zip).
+1. Download the sample from [https://github.com/alexa-labs/skill-sample-python-multi/archive/master.zip](https://github.com/alexa-labs/skill-sample-python-multi/archive/master.zip).
 2. Unzip the contents of `skill-sample-python-multi-master.zip`.
 
 ## (Or) Clone the Sample using Git
@@ -15,11 +15,11 @@ If you have git installed, you can use git to clone the sample instead of downlo
 
 1. Run the following command to clone the sample:
 ```
-git clone https://github.com/alexa/skill-sample-python-multi
+git clone https://github.com/alexa-labs/skill-sample-python-multi
 ```
 or
 ```
-git clone git@github.com:alexa/skill-sample-python-multi.git
+git clone git@github.com:alexa-labs/skill-sample-python-multi.git
 ```
 2. Once the clone is complete, you should have a folder named *skill-sample-python-multi* on your working directory.
 
