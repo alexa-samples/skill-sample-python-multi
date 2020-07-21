@@ -12,7 +12,7 @@ Access the AWS CloudFormation console in your preferred region and load a templa
 
 1. Login to the AWS Console for CloudFormation at [https://console.aws.amazon.com/cloudformation/home](https://console.aws.amazon.com/cloudformation/home) (then select the region that is most appropriate for your smart home locale of choice, eg. for North America choose *us-east-1*, for Europe and India choose *eu-west-1* and for Far East choose *us-west-1*).
 2. Click **Create stack** and select **With new resources (standard)**.
-3. Select **Template is ready** and **Upload a template file**. Select the `self.multi.template.json` (US) or the `self.eu.multi.template.json` (EU) file. 
+3. Select **Template is ready** and **Upload a template file**. Select the `self.multi.template.json` file. 
 4. Click **Next**.
 5. For the **Stack name** on the *Stack Details* page, enter `skill-sample-python-multi`.
 6. In the **AlexaSkillId** field of the *Parameters*, enter the Alexa Skill ID of the previously created skill stored in the **[Alexa Skill Application ID]** section of the `setup.txt` file.
