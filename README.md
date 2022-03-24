@@ -4,6 +4,9 @@ This is an Alexa skill sample that shows how to handle custom and smart home req
 
 At the end of this sample, you will have an Alexa skill and a supporting AWS backend that responds to commands for both custom and smart home interaction models. You will implement a "Pager" skill and a virtual "Pager" device that allows you to send commands to your computer that instructs your computer to beep.
 
+# ** This repository has been archived **
+This repository is still available as a point-in-time reference, but no further updates or support will be prioritized.
+
 To start this sample, follow the [instructions](./instructions/README.md).
 
 ## Resources
